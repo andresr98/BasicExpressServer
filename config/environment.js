@@ -1,10 +1,8 @@
 /**
  * Load environment variables from .env file
  */
-if (process.env.DEV) {
-    const dotenv = require('dotenv');
-    dotenv.config();
-}
+const dotenv = require('dotenv');
+dotenv.config();
 
 const {
   DEV,
