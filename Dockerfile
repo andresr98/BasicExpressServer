@@ -8,10 +8,10 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Copy dependency definitions
-COPY package.json /usr/src/app
+COPY package*.json /usr/src/app/
 
-# Install dependecies
-RUN npm install
+# Install only required dependecies
+RUN npm install --production
 
 # Get all the code needed to run the app
 COPY . /usr/src/app
