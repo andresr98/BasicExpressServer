@@ -6,11 +6,15 @@ const mongoose = require('mongoose');
 const {
   MONGO_URI,
   MONGODB_OPTIONS,
-} = require('./db/mongo');
+} = require('./configdb/mongo');
 
 const {
   DB_DIALECT,
-} = require('./environment');
+} = require('./config/environment');
+
+const {
+  sequelize
+} = require('./config/db/sequelize');
 
 const app = new Express();
 server(app);
@@ -26,5 +30,13 @@ app.listen(app.get('port'), () => {
       .catch(err => {
         console.log('Error while connecting to Mongo database', err);
       });
+  } else {
+    sequelize.authenticate()
+      .then(value => {
+        console.log('Succesfull Sequelize database connection!');
+      })
+      .catch(err => {
+        console.log('Error while connecting to Sequelize database', err);
+      })
   }
 });
