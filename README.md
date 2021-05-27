@@ -1,8 +1,6 @@
 # BasicExpressServer
 Basic express server setup
 
-![JavaScript Style Guide](https://img.shields.io/badge/code_style-airbnb-brightgreen.svg) [![Codeship Status for cdanmontoya/BasicExpressServer](https://app.codeship.com/projects/5db400b0-280f-0138-76df-464d1783be21/status?branch=master)](https://app.codeship.com/projects/383816) [![codecov](https://codecov.io/gh/cdanmontoya/BasicExpressServer/branch/master/graph/badge.svg)](https://codecov.io/gh/cdanmontoya/BasicExpressServer)
-
 This basic server was made with the purpose of making easier a quick deployment of a Node-based application.
 
 ## Features
@@ -14,8 +12,6 @@ This basic server was made with the purpose of making easier a quick deployment 
 - MongoDB and Sequelize ready-to-go configuration files.
 
 ## How to use
-You can click the ``Use this template`` button to make a copy to your own GitHub account!
-
 A ``.env`` file can be provided in order to load environment variables. The environment variables used in this template are listed below.
 
 - **DEV** Can be set to ``true`` if you are in a development environment, it allows the use of [``nodemon``](https://www.npmjs.com/package/nodemon).
@@ -28,15 +24,16 @@ A ``.env`` file can be provided in order to load environment variables. The envi
 
 Install dependencies
 
-`` npm i ``
+`` npm install ``
+
+Run tests
+
+`` npm run test ``
+
+Run development application
+
+`` npm run dev ``
 
 Run application
 
 `` node app.js ``
-
-## Preview
-
-You can check the preview at:
-
-- https://cdanmontoya-bes.herokuapp.com/api/v1/hello-world
-- https://cdanmontoya-bes.herokuapp.com/api-docs

@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint ./ --fix",
     "test": "jest",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +15,12 @@
   },
   "author": "cdanmontoya",
   "license": "MIT",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
