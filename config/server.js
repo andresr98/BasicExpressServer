@@ -32,7 +32,7 @@ const {
 } = require('./db/mongo');
 
 const {
-  DB_DIALECT
+  DB_DIALECT,
 } = require('./environment');
 
 
