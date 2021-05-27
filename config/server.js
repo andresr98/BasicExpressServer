@@ -3,7 +3,6 @@
  */
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
@@ -26,30 +25,11 @@ const {
   morganMode,
 } = require('./config');
 
-const {
-  MONGO_URI,
-  MONGODB_OPTIONS,
-} = require('./db/mongo');
-
-const {
-  DB_DIALECT,
-} = require('./environment');
-
-
 /**
  * Sets up the server configuration to an Express app
  * @param {*} app Basic Express app
  */
 const server = (app) => {
-  if (DB_DIALECT === 'mongo') {
-    mongoose.connect(MONGO_URI, MONGODB_OPTIONS, (err) => {
-      if (err) {
-        return console.log('Error while connecting to Mongo database');
-      }
-      return console.log('Succesfull Mongo database connection!');
-    });
-  }
-
   app.disable('x-powered-by');
   app.set('port', port);
   app.use(bodyParser.json());
