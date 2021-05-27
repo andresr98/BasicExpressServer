@@ -1,23 +1,26 @@
 {
   "name": "basicexpressserver",
-  "version": "1.0.2",
-  "description": "Basic express server with a simple MongoDB connection for general purposes",
+  "version": "1.0.5",
+  "description": "Basic express server with a simple MongoDB or Sequelize connection for general purposes",
   "main": "app.js",
   "scripts": {
     "lint": "eslint ./ --fix",
     "test": "jest",
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cdanmontoya/BasicExpressServer.git"
+    "url": "git+https://github.com/andresr98/BasicExpressServer.git"
   },
   "author": "cdanmontoya",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cdanmontoya/BasicExpressServer/issues"
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
-  "homepage": "https://github.com/cdanmontoya/BasicExpressServer#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -26,7 +29,7 @@
     "express-openapi": "^6.0.0",
     "http-status": "^1.4.2",
     "minimist": "^1.2.5",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.12.11",
     "morgan": "^1.9.1",
     "sequelize": "^5.21.3",
     "swagger-ui-express": "^4.1.3",
