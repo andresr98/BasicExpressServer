@@ -1,17 +1,10 @@
 /**
  * Load environment variables from .env file
  */
-
-/** When deploy on heroku for example, there is no need of dotenv library
 if (process.env.DEV) {
     const dotenv = require('dotenv');
     dotenv.config();
 }
-*/
-
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const {
   DEV,
